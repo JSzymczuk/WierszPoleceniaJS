@@ -1,0 +1,64 @@
+@font-face {
+	font-family: CourierPrime; 
+	src: url(../fonts/CourierPrime-Regular.ttf);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: CourierPrime;
+}
+
+body {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.output-container {
+	flex: 1;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    border: 4px #fff solid;
+}
+
+#output {
+    box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #444;
+    padding: 20px;
+    line-height: 40px;
+    font-size: 30px;
+    color: #eee;
+}
+
+.input {
+	flex-basis: 60px;
+    display: flex;
+    padding: 4px;
+    flex-direction: row;
+    background-color: #fff;
+}
+
+#input {
+    box-sizing: border-box;
+    border: 2px #444 solid;
+    margin-right: 4px;
+    height: 54px;
+    padding: 15px 11px 10px;
+    color: #777;
+    line-height: 40px;
+    vertical-align: middle;
+    font-size: 30px;
+    flex: 1;
+}
+
+#confirm-input {
+	height: 54px;
+    width: 54px;
+    border: 2px solid #aaa;
+    display: block;
+    box-sizing: border-box;
+    float: right;
+    background-color: #4d4;
+}

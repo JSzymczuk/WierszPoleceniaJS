@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<link href="styles/style.css" rel="stylesheet">
+		<script src="scripts/io.js"></script>
+	</head>
+	<body>
+		<div class="output-container"><div id="output"></div></div>
+		<div class="input">		
+			<input id="input" />
+			<button id="confirm-input" />
+		</div>
+		
+		<script>		
+			async function main() {
+				// ...
+				write(9);
+				write("Zażółć gęślą jaźń");
+				write(3.1415);
+				write(9);
+				write("Zażółć gęślą jaźń");
+				write(3.1415);
+				write(9);
+				write("Zażółć gęślą jaźń");
+				write(3.1415);
+				write(9);
+				write("Zażółć gęślą jaźń");
+				write(3.1415);
+				write(9);
+				write("Zażółć gęślą jaźń");
+				write(3.1415);
+				write(9);
+				write("Zażółć gęślą jaźń");
+				write(3.1415);				
+				write("Podaj:");
+				var x = parseInt(await read());			
+				write("Podaj:");
+				var y = parseInt(await read());			
+				write("Wynik:");
+				var z = x + y;	
+				write(z);
+				
+			}
+			
+			document.getElementById('confirm-input').addEventListener('click', onConfirmInput);
+			window.addEventListener("load", main);			
+		</script>
+	</body>
+</html>
