@@ -1,9 +1,31 @@
-function write(content) {
-	var newParagraph = document.createElement('p');
-	newParagraph.textContent = content;
+function appendText(str) {
 	var output = document.getElementById('output');
-	output.appendChild(newParagraph);
-	output.scrollTop = output.scrollHeight;
+	var text = document.createTextNode(str);
+	output.appendChild(text);	
+}
+
+function appendNewLine() {
+	var output = document.getElementById('output');
+	var lineBreak = document.createElement('br');
+	output.appendChild(lineBreak);	
+}
+
+function write(content) {
+	var strings = content.toString().split("\n");
+	var n = strings.length;
+	if (n > 0) {
+		appendText(strings[0]);
+		for (var i = 1; i < n; ++i) {
+			appendNewLine();
+			appendText(strings[1]);
+		}
+		output.scrollTop = output.scrollHeight;
+	}
+}
+
+function writeLine(content) {
+	write(content);
+	appendNewLine();
 }
 
 var _readCompleted;
@@ -24,7 +46,7 @@ async function read() {
 	
 	await promise.then((result) => { value = result; });
 	
-	write(value);
+	writeLine(value);
 	
 	return value;
 }			
