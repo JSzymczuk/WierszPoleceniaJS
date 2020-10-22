@@ -10,9 +10,38 @@
 			<button id="confirm-input" />
 		</div>
 		
-		<script>		
+		<script>
 			async function main() {
 				// ...
+
+				/* Zatrzymuje pracę programu na t milisekund. */
+				// async wait(t)        : void
+
+				/* Zwraca wartość podaną przez użytkownika. */
+				// async read()         : string
+
+				/* Wypisuje tekst w konsoli. */
+				// write(src)           : void
+
+				/* Wypisuje tekst w konsoli i przechodzi do nowego wiersza. */
+				// writeLine(src)       : void
+
+				/* Czyści ekran konsoli. */
+				// clear()              : void
+
+				/* Zmienia kolor następnych napisów na rgba(r, g, b). */
+				// changeColor(r, g, b) : void
+
+				/* Zwraca pseudolosową liczbę całkowitą od min do max. */
+				// random(min, max)     : int
+
+				/* 
+					Uwaga! Jeśli przed nazwą funkcji pojawia się async, to jest ona asynchroniczna. 
+					Wywołując taką funkcję należy użyć dodatkowo słowa kluczowego await.
+					Jeśli funkcja asynchroniczna jest wywołana wewnątrz innej funkcji, 
+					to również musi być ona oznaczona jako asynchroniczna (przed słowem kluczowym 
+					function należy dodać słowo kluczowe async).
+				 */
 			}
 			
 			document.getElementById('confirm-input').addEventListener('click', onConfirmInput);

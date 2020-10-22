@@ -32,6 +32,7 @@ body {
     font-size: 30px;
     color: #eee;
 	min-height: 100%;
+    word-break: break-word;
 }
 
 .input {
@@ -56,6 +57,7 @@ body {
 }
 
 #confirm-input {
+    position: relative;
 	height: 54px;
     width: 54px;
     border: 2px solid #aaa;
@@ -63,4 +65,22 @@ body {
     box-sizing: border-box;
     float: right;
     background-color: #4d4;
+    color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#confirm-input:after {
+    content: "\25B6";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 38px;
+    padding-top: 6px;
+    padding-left: 4px;
+}
+
+#confirm-input:hover {
+    color: rgba(255, 255, 255, 0.9);
 }

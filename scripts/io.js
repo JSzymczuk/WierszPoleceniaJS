@@ -1,7 +1,15 @@
+const __defaultColor = 238;
+var _currentR = __defaultColor;
+var _currentG = __defaultColor;
+var _currentB = __defaultColor;
+
 function appendText(str) {
 	var output = document.getElementById('output');
+	var span = document.createElement('span');
 	var text = document.createTextNode(str);
-	output.appendChild(text);	
+	span.appendChild(text);
+	span.style.color = "rgb(" + _currentR + ", " + _currentG + ", " + _currentB + ")"
+	output.appendChild(span);	
 }
 
 function appendNewLine() {
@@ -11,6 +19,7 @@ function appendNewLine() {
 }
 
 function write(content) {
+	var output = document.getElementById('output');
 	var strings = content.toString().split("\n");
 	var n = strings.length;
 	if (n > 0) {
@@ -26,6 +35,17 @@ function write(content) {
 function writeLine(content) {
 	write(content);
 	appendNewLine();
+}
+
+function clear() {
+	var output = document.getElementById('output');
+	output.innerHTML = "";
+}
+
+function changeColor(r, g, b) {
+	_currentR = r;
+	_currentG = g;
+	_currentB = b;
 }
 
 var _readCompleted;
@@ -49,7 +69,7 @@ async function read() {
 	writeLine(value);
 	
 	return value;
-}			
+}
 
 function onConfirmInput() {
 	if (_readCompleted === false) {
@@ -60,3 +80,11 @@ function onConfirmInput() {
 	}
 }
 
+async function wait(milliseconds) {	
+	var promise = new Promise((resolve, reject) => {
+		var readCheck = setTimeout(() => {
+			resolve();
+		}, milliseconds);
+	});	
+	await promise.then(() => { });
+}
